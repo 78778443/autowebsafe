@@ -1,5 +1,8 @@
 <?php
 
+
+namespace model;
+
 /***
  * //应用举例
  * require_once('cls_sqlite.php');
@@ -25,13 +28,13 @@ class SQLiteModel
     public $whereStr = '';
     public $limitStr = '';
 
-    function __construct($file = './databases/websafe')
+    function __construct($file = '../databases/websafe')
     {
         try {
-            $this->connection = new PDO('sqlite:' . $file);
+            $this->connection = new \PDO('sqlite:' . $file);
         } catch (PDOException $e) {
             try {
-                $this->connection = new PDO('sqlite2:' . $file);
+                $this->connection = new \PDO('sqlite2:' . $file);
             } catch (PDOException $e) {
                 exit('error!');
             }
@@ -175,11 +178,4 @@ class SQLiteModel
 
         return $this->query($sql);
     }
-}
-
-function M($name)
-{
-    $db = new SQLiteModel();
-
-    return $db->table($name);
 }
