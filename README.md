@@ -5,6 +5,11 @@
 
 包含了 permeate渗透系统、XSS Platform、DVWA等项目。
 
+主要使用了下面的容器
+```
+https://cloud.docker.com/u/daxia/repository/docker/daxia/websafe
+```
+
 
 ## 二、注意事项
 因为这个项目是用到了Docker容器和PHP脚本以及frp穿透工具，因此在使用此项目前必须安装好以下环境:
