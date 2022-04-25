@@ -1,18 +1,10 @@
 ## 一、背景
-笔者不时遇到个别同学求助安装靶场系统和工具的安装，本着方便他人的同时也方便自己，便思考是否可以简化靶场系统和工具安装方式，发现容器非常适合。
+笔者经常遇到有同学求助安装靶场系统和一些常用的安全工具，收到的求助多了就想着是否能简化靶场系统的安装方式，因此抽了一些时间做了此项目。
 
-便抽了一些时间将一些常用的靶场系统进行了封装，并提供一个可视化操作界面进行管理，容器+可视化管理也就是这个`autowebsafe`项目了。
+这个项目主要作用是点击一个按钮便自动化部署了常见的靶场系统，实现原理主要是通过docker+frp+php脚本实现，下面主要介绍使用方法和注意事项
 
-`autowebsafe`项目主要意义是降低新手入门的门槛,降低靶场系统和工具安装的复杂度。
+包含了 permeate渗透系统、XSS Platform、DVWA等项目。
 
-实现原理主要是通过docker+frp+php脚本实现，包含了 permeate渗透系统、XSS Platform、DVWA等项目。
-
-容器地址如下：
-```
-https://cloud.docker.com/u/daxia/repository/docker/daxia/websafe
-```
-
-下面主要介绍使用方法和注意事项
 
 ## 二、注意事项
 因为这个项目是用到了Docker容器和PHP脚本以及frp穿透工具，因此在使用此项目前必须安装好以下环境:
@@ -84,7 +76,7 @@ http://autowebsafe.localhost/
 ```
 接着可以看到浏览器如下图所示，但创建容器的按钮并不可用，因为还缺少docker以及frp，因此还需要往后看。
 
-![image](http://tuchuang.qsjianzhan.com/autowebsafe/1.png)
+![image](http://tuchuang.songboy.site/autowebsafe/1.png)
 
 
 ### 3.5 安装Docker
@@ -122,7 +114,7 @@ https://github.com/fatedier/frp/releases
 
 下载并解压之后，可以看到里面有很多个文件，如下图所示
 
-![image](http://tuchuang.qsjianzhan.com/autowebsafe/2.png)
+![image](http://tuchuang.songboy.site/autowebsafe/2.png)
 
 我们只需要将frpc文件复制到我们刚才从GitHub下载下来的代码汇总即可，复制的位置是`autowebsafe/tools/frp/frpc`,其他就不用管了
 
@@ -133,21 +125,21 @@ https://github.com/fatedier/frp/releases
 ### 4.1 创建容器
 依然回到浏览器中，打开URL地址`http://autowebsafe.localhost/`,看到的界面如下
 
-![image](http://tuchuang.qsjianzhan.com/autowebsafe/1.png)
+![image](http://tuchuang.songboy.site/autowebsafe/1.png)
 
 然后点击`创建容器`按钮，浏览器等待3秒钟会自动刷新，刷新之后便可以看到如下列表
 
-![image](http://tuchuang.qsjianzhan.com/autowebsafe/4.png)
+![image](http://tuchuang.songboy.site/autowebsafe/4.png)
 
 ### 4.2 安装靶场系统
 
 在列表中有一个`打开网址`按钮，点击打开按钮，便可以进入安装页面，如下图所示
 
-![image](http://tuchuang.qsjianzhan.com/autowebsafe/5.png)
+![image](http://tuchuang.songboy.site/autowebsafe/5.png)
 
 安装好之后，可以进入首页，如下图所示
 
-![image](http://tuchuang.qsjianzhan.com/autowebsafe/6.png)
+![image](http://tuchuang.songboy.site/autowebsafe/6.png)
 
 
 ### 五、其他
